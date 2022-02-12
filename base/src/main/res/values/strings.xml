@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Check24 task</string>
+    <string name="terms">Rechtliche Hinweise</string>
+    <string name="position" translatable="false">position</string>
+    <string name="button_retry">Retry</string>
+    <string name="label_error">Something went wrong, please try again</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="next">Next</string>
+    <string name="price">Price :</string>
+    <string name="favourite">Favourite</string>
+    <string name="un_favourite">Un-favourite</string>
+    <string name="long_description">Long description</string>
+
+</resources>

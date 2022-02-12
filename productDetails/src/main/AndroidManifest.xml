@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.check24.productdetails">
+
+    <application>
+        <activity
+            android:name=".view.WebViewActivity"
+            android:exported="false" />
+        <activity android:name=".view.ProductDetailsActivity" />
+    </application>
+</manifest>

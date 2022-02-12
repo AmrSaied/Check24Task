@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.check24.productlist.viewModel.ProductsItemUiModel" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:strokeColor="@android:color/darker_gray"
+        app:strokeWidth="1dp"
+
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:onClick="@{onClick}"
+        app:contentPadding="@dimen/_8sdp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:visibility="@{model.available}"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:scaleType="centerCrop"
+                app:image="@{model.imageURL}"
+                tools:src="@tools:sample/backgrounds/scenic"/>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:text="@{model.name}"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        tools:text="Name" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.releaseDate}"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="21.12.2022" />
+
+
+                </LinearLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:lines="2"
+                    android:text="@{model.description}"
+                    android:ellipsize="end"
+                    android:textColor="@color/colorSecondaryText"
+                    tools:text="@tools:sample/lorem/random" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/price" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@{model.priceTxt}"
+                        android:textColor="@color/colorSecondaryText"
+                        tools:text="12 EUR" />
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:rating="4"
+                        android:visibility="@{model.available}"
+
+                        android:rating="@{model.rating}"
+                        android:layout_gravity="center_vertical"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:theme="@style/RatingBar"/>
+
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:rating="4"
+                    android:visibility="@{!model.available}"
+
+                    android:rating="@{model.rating}"
+                    android:layout_gravity="center_vertical"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:theme="@style/RatingBar"/>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:visibility="@{!model.available}"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:scaleType="centerCrop"
+                app:image="@{model.imageURL}"
+                tools:src="@tools:sample/backgrounds/scenic"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

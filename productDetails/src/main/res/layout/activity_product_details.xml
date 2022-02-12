@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_app_bar"/>
+
+        <com.gturedi.views.StatefulLayout
+            android:layout_weight="1"
+            android:id="@+id/stateful"
+            style="@style/StatefulLayout">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingVertical="@dimen/page_margin_vertical"
+                android:paddingHorizontal="@dimen/page_margin_horizontal"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:scaleType="centerCrop"
+                            android:id="@+id/iv_image"
+                            tools:src="@tools:sample/backgrounds/scenic"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:textAppearanceMedium"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:id="@+id/tv_name"
+                                tools:text="Name" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/price" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv_price"
+                                    android:textColor="@color/colorSecondaryText"
+                                    tools:text="12 EUR" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp">
+
+                                <androidx.appcompat.widget.AppCompatRatingBar
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:rating="2.5"
+                                    android:id="@+id/rating_bar"
+                                    style="@style/Widget.AppCompat.RatingBar.Small"
+                                    android:theme="@style/RatingBar"/>
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical|end"
+                                    android:textColor="@color/colorSecondaryText"
+                                    android:id="@+id/tv_date"
+                                    tools:text="21.12.2022" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textColor="@color/colorSecondaryText"
+                        android:id="@+id/tv_short_description"
+                        tools:text="@tools:sample/lorem" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:id="@+id/btn_fav"
+                        tools:text="@string/favourite"/>
+
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textColor="@color/colorSecondaryText"
+                        android:id="@+id/tv_long_desc"
+                        tools:text="@tools:sample/lorem" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+        </com.gturedi.views.StatefulLayout>
+        <TextView
+            android:id="@+id/terms_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_12sdp"
+            android:text="© 2020 Check24" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'koin'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+
+    buildFeatures {
+        dataBinding = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+
+dependencies {
+
+    def paging_version = "3.0.1"
+    def coroutines_version = "1.5.0"
+    def lifecycle_version = "2.4.0"
+    def sdp_version = "1.0.6"
+
+    //Base
+    api 'androidx.core:core-ktx:1.7.0'
+    api 'androidx.appcompat:appcompat:1.4.1'
+    api 'com.google.android.material:material:1.5.0'
+    api 'androidx.multidex:multidex:2.0.1'
+
+    //Koin DI
+    api "org.koin:koin-androidx-scope:$rootProject.koin_version"
+    api "org.koin:koin-androidx-viewmodel:$rootProject.koin_version"
+    api "org.koin:koin-androidx-ext:$rootProject.koin_version"
+
+
+    // lifecycle
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+
+    // Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    //Paging
+    api "androidx.paging:paging-common-ktx:$paging_version"
+    api "androidx.paging:paging-runtime-ktx:$paging_version"
+
+
+    //Tablet support
+    api "com.intuit.sdp:sdp-android:$sdp_version"
+    api "com.intuit.ssp:ssp-android:$sdp_version"
+
+
+     api "io.coil-kt:coil:1.4.0"
+
+    api 'com.github.gturedi:StatefulLayout:1.2.2'
+
+    api 'com.blankj:utilcodex:1.30.6'
+
+
+}
