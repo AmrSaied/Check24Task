@@ -19,7 +19,16 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
 
+
+        release {
+            storeFile file('../mzadkm.jks')
+            storePassword "hackerhammdan007"
+            keyAlias "Mzadkm"
+            keyPassword "hackerhammdan007"
+        }
+    }
     buildFeatures {
         dataBinding = true
     }
@@ -28,6 +37,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
         }
     }
     compileOptions {
